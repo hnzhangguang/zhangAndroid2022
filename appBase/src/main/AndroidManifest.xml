@@ -10,6 +10,69 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZhangAndroid">
         <activity
+            android:name=".http.OKhttpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".picture.GlideActivity"
+            android:exported="true" />
+        <activity
+            android:name=".complexcomponent.ViewPagerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".animation.PropertyAnimatorActivity"
+            android:exported="true" />
+        <activity
+            android:name=".animation.TweenAnimationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".animation.FrameAnimationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".complexcomponent.RecycleViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".complexcomponent.ListViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.ConstraintLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.GridLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.TableLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.FrameLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.RelativeLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.LinearLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".basecomponent.PopWindowActivity"
+            android:exported="true" />
+        <activity
+            android:name=".basecomponent.AlertDialogActivity"
+            android:exported="true" />
+        <activity
+            android:name=".basecomponent.ProgressBarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".basecomponent.ImageViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".basecomponent.ToolBarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".basecomponent.NotificationActivity2"
+            android:exported="true" />
+        <activity
+            android:name=".basecomponent.TextViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
