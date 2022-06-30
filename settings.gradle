@@ -11,4 +11,6 @@ include ':appBase'
 include ':app_backup'
 include ':app_component'
 include ':app_plugin'
+include ':firstcode_coolWeather'
+include ':firstcode_materialdesign'
 
