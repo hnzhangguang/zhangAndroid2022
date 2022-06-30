@@ -9,4 +9,6 @@ dependencyResolutionManagement {
 rootProject.name = "zhangAndroid2022"
 include ':appBase'
 include ':app_backup'
+include ':app_component'
+include ':app_plugin'
 
