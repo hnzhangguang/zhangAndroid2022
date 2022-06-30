@@ -69,6 +69,7 @@ public class ImageViewActivity extends AppCompatActivity {
                 imageView1.setImageAlpha(alpha); //为图片设置透明度
             }
         });
+
         //对切换图片按钮设置监听事件
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +78,7 @@ public class ImageViewActivity extends AppCompatActivity {
                 imageView1.setImageResource(images[++currentImage % images.length]);
             }
         });
+
     }
 
 
