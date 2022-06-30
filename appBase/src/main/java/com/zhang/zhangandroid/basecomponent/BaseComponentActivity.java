@@ -1,6 +1,4 @@
-package com.zhang.zhangandroid;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.zhang.zhangandroid.basecomponent;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -13,26 +11,26 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.zhang.zhangandroid.basecomponent.ImageViewActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.zhang.zhangandroid.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class BaseComponentActivity extends AppCompatActivity {
 
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_base_component);
         listView = findViewById(R.id.listView);
 
 
         List<String> list = new ArrayList<>();
-        list.add("baseComponent");
-        list.add("ComplexComponentActivity");
-        list.add("AnimationActivity");
+        list.add("ImageViewActivity");
 
         MyAdapter adapter = new MyAdapter(list,this);
 
@@ -41,20 +39,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Object item = adapterView.getAdapter().getItem(i);//"baseComponent"
-                String junmString = "com.zhang.zhangandroid.basecomponent.BaseComponentActivity";
+                String junmString = "com.zhang.zhangandroid.basecomponent.ImageViewActivity";
 
-                if (item.equals("baseComponent")){
-                    junmString = "com.zhang.zhangandroid.basecomponent.BaseComponentActivity";
+                if (item.equals("ImageViewActivity")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.ImageViewActivity";
                 }
-
-                if (item.equals("ComplexComponentActivity")){
-                    junmString = "com.zhang.zhangandroid.complexcomponent.ComplexComponentActivity";
-                }
-                if (item.equals("AnimationActivity")){
-                    junmString = "com.zhang.zhangandroid.animation.AnimationActivity";
-                }
-
-
 
 
                 ComponentName cn = new ComponentName(getApplication().getPackageName(),junmString) ;
@@ -67,14 +56,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+
     }
+
 
 
     /**
      * 简介: listView适配器
      *  作者: zhangg
      */
-    class MyAdapter extends BaseAdapter{
+    class MyAdapter extends BaseAdapter {
 
         List<String> datas ; // 数据集
         Context context; // 上下文
@@ -107,4 +101,7 @@ public class MainActivity extends AppCompatActivity {
             return inflate;
         }
     }
+
+
+
 }
