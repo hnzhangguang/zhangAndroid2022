@@ -3,6 +3,7 @@ apply from: "config.gradle"
 buildscript {
     repositories {
         google()
+        jcenter()
         mavenCentral()
     }
     dependencies {
@@ -18,9 +19,12 @@ task clean(type: Delete) {
 }
 
 // gradle 从7.0 降到 4.2 报 Cannot resolve external dependency androidx.appcompat:appcompat:1.2.0 becaus 问题解决方案
+// maven { url "https://jitpack.io" } 加载不到org.litepal.guolindev:core:3.2.3问题的解决方案就是加这一句
 allprojects {
     repositories {
         google()
+        jcenter()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 }

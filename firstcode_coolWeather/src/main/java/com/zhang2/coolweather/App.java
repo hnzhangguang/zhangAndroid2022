@@ -2,6 +2,8 @@ package com.zhang2.coolweather;
 
 import android.app.Application;
 
+import org.litepal.LitePal;
+
 public class App extends Application {
 
     @Override

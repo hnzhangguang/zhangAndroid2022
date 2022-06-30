@@ -26,7 +26,7 @@ public class Utility {
                     Province province = new Province();
                     province.setProvinceName(provinceObject.getString("name"));
                     province.setProvinceCode(provinceObject.getInt("id"));
-                    province.save();
+//                    province.save();
                 }
                 return true;
             } catch (JSONException e) {
@@ -49,7 +49,7 @@ public class Utility {
                     city.setCityName(cityObject.getString("name"));
                     city.setCityCode(cityObject.getInt("id"));
                     city.setProvinceId(provinceId);
-                    city.save();
+//                    city.save();
                 }
                 return true;
             } catch (JSONException e) {
@@ -72,7 +72,7 @@ public class Utility {
                     county.setCountyName(countyObject.getString("name"));
                     county.setWeatherId(countyObject.getString("weather_id"));
                     county.setCityId(cityId);
-                    county.save();
+//                    county.save();
                 }
                 return true;
             } catch (JSONException e) {

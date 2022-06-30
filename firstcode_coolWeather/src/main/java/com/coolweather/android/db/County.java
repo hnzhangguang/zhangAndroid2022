@@ -1,7 +1,9 @@
 package com.coolweather.android.db;
 
 
-public class County extends Object {
+import org.litepal.crud.LitePalSupport;
+
+public class County extends LitePalSupport {
 
     private int id;
 
