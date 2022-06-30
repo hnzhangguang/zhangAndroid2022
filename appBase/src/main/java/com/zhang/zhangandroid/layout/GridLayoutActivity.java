@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.zhang.zhangandroid.R;
+
 public class GridLayoutActivity extends AppCompatActivity {
 
     @Override
