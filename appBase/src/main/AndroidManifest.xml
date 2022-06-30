@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZhangAndroid">
         <activity
+            android:name=".layout.DrawerLayoutViewPagerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.LayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".layout.DrawerLayoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".persistence.PersistenceDataActivity"
             android:exported="true" />
         <activity

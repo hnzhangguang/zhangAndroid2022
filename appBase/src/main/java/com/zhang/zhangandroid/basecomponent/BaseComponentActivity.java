@@ -26,7 +26,7 @@ public class BaseComponentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_component);
-        listView = findViewById(R.id.listView);
+        listView = findViewById(R.id.listView_basecomponent);
 
 
         List<String> list = new ArrayList<>();

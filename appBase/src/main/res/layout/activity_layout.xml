@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".complexcomponent.ViewPagerActivity">
+    tools:context=".layout.LayoutActivity">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+
+    <ListView
+        android:id="@+id/listView_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" />
 
-    </androidx.viewpager.widget.ViewPager>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.zhang.zhangandroid.complexcomponent;
+package com.zhang.zhangandroid.layout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.zhang.zhangandroid.MainActivity;
 import com.zhang.zhangandroid.R;
 import com.zhang.zhangandroid.base.BaseActivity;
 import com.zhang.zhangandroid.base.MyListViewSimpleAdapter;
@@ -14,7 +15,7 @@ import com.zhang.zhangandroid.base.MyListViewSimpleAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ComplexComponentActivity extends BaseActivity {
+public class LayoutActivity extends BaseActivity {
 
 
     ListView listView;
@@ -22,13 +23,13 @@ public class ComplexComponentActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_complex_component);
+        setContentView(R.layout.activity_layout);
 
-        listView = findViewById(R.id.listView_complex);
-
+        listView = findViewById(R.id.listView_layout);
 
         List<String> list = new ArrayList<>();
-        list.add("ViewPagerActivity");
+        list.add("DrawerLayoutActivity");
+        list.add("DrawerLayoutViewPagerActivity");//DrawerLayout + ViewPager 解决滑动冲突问题
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -37,12 +38,14 @@ public class ComplexComponentActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Object item = adapterView.getAdapter().getItem(i);//"baseComponent"
-                String junmString = "com.zhang.zhangandroid.complexcomponent.ViewPagerActivity";
+                String junmString = "com.zhang.zhangandroid.layout.DrawerLayoutActivity";
 
-                if (item.equals("ViewPagerActivity")){
-                    junmString = "com.zhang.zhangandroid.complexcomponent.ViewPagerActivity";
+                if (item.equals("DrawerLayoutActivity")){
+                    junmString = "com.zhang.zhangandroid.layout.DrawerLayoutActivity";
                 }
-
+                if (item.equals("DrawerLayoutViewPagerActivity")){
+                    junmString = "com.zhang.zhangandroid.layout.DrawerLayoutViewPagerActivity";
+                }
 
 
 
@@ -54,7 +57,5 @@ public class ComplexComponentActivity extends BaseActivity {
 
             }
         });
-
-
     }
 }
