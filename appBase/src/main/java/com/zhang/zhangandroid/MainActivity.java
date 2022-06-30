@@ -13,12 +13,13 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.zhang.zhangandroid.base.BaseActivity;
 import com.zhang.zhangandroid.basecomponent.ImageViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     ListView listView;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("baseComponent");
         list.add("ComplexComponentActivity");
         list.add("AnimationActivity");
+        list.add("PersistenceDataActivity");
 
         MyAdapter adapter = new MyAdapter(list,this);
 
@@ -53,14 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 if (item.equals("AnimationActivity")){
                     junmString = "com.zhang.zhangandroid.animation.AnimationActivity";
                 }
+                if (item.equals("PersistenceDataActivity")){
+                    junmString = "com.zhang.zhangandroid.persistence.PersistenceDataActivity";
+                }
 
 
-
-
-                ComponentName cn = new ComponentName(getApplication().getPackageName(),junmString) ;
-                Intent intent = new Intent() ;
-                intent.setComponent(cn) ;
-                startActivity(intent) ;
+                // 打开activity
+               openActivity(junmString);
 
 
 
