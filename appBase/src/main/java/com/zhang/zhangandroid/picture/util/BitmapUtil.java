@@ -48,7 +48,8 @@ public class BitmapUtil {
     Bitmap bmp;
 
 
-    /** 方式1
+    /**
+     * 方式1
      * 简介: 直接处理返回图片：
      */
     protected void onActivityResult1(Activity activity, int requestCode, int resultCode, Intent data) {
@@ -71,15 +72,15 @@ public class BitmapUtil {
     }
 
 
-
-    /** 方式2
+    /**
+     * 方式2
      * 简介: 获得图片的地址再处理：
      */
     protected void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
-        if(resultCode == Activity.RESULT_OK){
+        if (resultCode == Activity.RESULT_OK) {
             Uri uri = data.getData();
-            String [] proj={MediaStore.Images.Media.DATA};
-            Cursor cursor = activity.getContentResolver().query( uri,
+            String[] proj = {MediaStore.Images.Media.DATA};
+            Cursor cursor = activity.getContentResolver().query(uri,
                     proj, // Which columns to return
                     null, // WHERE clause; which rows to return (all rows)
                     null, // WHERE clause selection arguments (none)
@@ -89,7 +90,7 @@ public class BitmapUtil {
             String path = cursor.getString(column_index);
             bmp = BitmapFactory.decodeFile(path);
             System.out.println("the path is :" + path);
-        }else{
+        } else {
             Toast.makeText(activity, "请重新选择图片", Toast.LENGTH_SHORT).show();
         }
     }
