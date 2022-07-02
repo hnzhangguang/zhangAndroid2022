@@ -6,6 +6,10 @@ import android.os.Bundle;
 
 import com.zhang.zhangandroid.R;
 
+
+/**
+ * 简介: 静态加载fragment
+ */
 public class FragmentActivity extends AppCompatActivity {
 
     @Override

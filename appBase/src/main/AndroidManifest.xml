@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZhangAndroid">
         <activity
+            android:name=".fragment.FragmentActivity2"
+            android:exported="true" />
+        <activity
             android:name=".fragment.FragmentActivity"
             android:exported="true" />
         <activity

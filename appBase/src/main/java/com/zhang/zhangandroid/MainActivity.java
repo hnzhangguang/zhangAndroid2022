@@ -32,6 +32,7 @@ public class MainActivity extends BaseActivity {
         list.add("AnimationActivity");
         list.add("PersistenceDataActivity");
         list.add("LayoutActivity");
+        list.add("FragmentActivity");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -57,6 +58,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("LayoutActivity")){
                     junmString = "com.zhang.zhangandroid.layout.LayoutActivity";
+                }
+                if (item.equals("FragmentActivity")){
+                    junmString = "com.zhang.zhangandroid.fragment.FragmentActivity2";
                 }
 
 
