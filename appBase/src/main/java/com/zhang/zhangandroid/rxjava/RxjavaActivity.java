@@ -2,6 +2,9 @@ package com.zhang.zhangandroid.rxjava;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,8 +34,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * 简介: 响应式编程思维
- *  起点  --> xxx -> xxx -> xxx  -> 终点
- *
+ * 起点  --> xxx -> xxx -> xxx  -> 终点
  */
 public class RxjavaActivity extends BaseActivity {
 
@@ -218,7 +220,7 @@ public class RxjavaActivity extends BaseActivity {
         }).map(new Function<String, String>() { //变换向下传递的类型
             @Override
             public String apply(@NonNull String s) throws Exception {
-                return s+"zhangg";
+                return s + "zhangg";
             }
         }).subscribe(new Observer<String>() {  // 注册观察者 终点
 
@@ -248,7 +250,7 @@ public class RxjavaActivity extends BaseActivity {
     }
 
 
-    public void downLoadImage(){
+    public void downLoadImage() {
         String PATH = "https://pics5.baidu.com/feed/b64543a98226cffc53a4a8beb5decf9af703ea1d.jpeg?token=3e41a326bc8795a1a0f762b1151bff92";
         Observable.just(PATH).map(new Function<String, Bitmap>() {  // 1, 起点
             @Override
@@ -259,46 +261,76 @@ public class RxjavaActivity extends BaseActivity {
                     HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                     httpURLConnection.setConnectTimeout(6000);
                     int responseCode = httpURLConnection.getResponseCode();
-                    if (responseCode == HttpURLConnection.HTTP_OK){
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
                         InputStream inputStream = httpURLConnection.getInputStream();
                         Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                        return  bitmap;
+                        return bitmap;
                     }
 
 
-                }catch (Exception e){
+                } catch (Exception e) {
 
                     logZhang(e);
 
                 }
                 return null;
             }
+        }).map(new Function<Bitmap, Bitmap>() {
+            @Override
+            public Bitmap apply(@NonNull Bitmap bitmap) throws Exception {   //转换
+
+                Paint paint = new Paint();
+                paint.setColor(Color.RED);
+                paint.setTextSize(55);
+                Bitmap newBitmap = drawTextToBitmap(bitmap, "大家好xxxxx", paint, 88, 88);
+
+                return newBitmap;
+            }
         })
                 .subscribeOn(Schedulers.io())  // 给上面的分配异步线程(图片下载)
                 .observeOn(AndroidSchedulers.mainThread()) // 给观察者分配线程main线程
                 .subscribe(new Observer<Bitmap>() {   // 3, 终点
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
 
-            }
+                    }
 
-            @Override
-            public void onNext(@NonNull Bitmap bitmap) {
-                rxjava_image.setImageBitmap(bitmap);
+                    @Override
+                    public void onNext(@NonNull Bitmap bitmap) {
+                        rxjava_image.setImageBitmap(bitmap);
 
-            }
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
+                    @Override
+                    public void onError(@NonNull Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
+
+
+    // 图片上绘制文字, 加水印
+    private final Bitmap drawTextToBitmap(Bitmap bitmap, String text, Paint paint, int paddingLeft, int paddingTop) {
+
+        Bitmap.Config config = bitmap.getConfig();
+        paint.setDither(true);// 获取跟清晰的图像采样
+        paint.setFilterBitmap(true);//过滤一些
+
+        if (config == null) {
+            config = Bitmap.Config.ARGB_8888;
+        }
+        bitmap = bitmap.copy(config, true);
+        Canvas canvas = new Canvas(bitmap);
+        canvas.drawText(text, paddingLeft, paddingTop, paint);
+
+        return bitmap;
+    }
+
 
 }
 
