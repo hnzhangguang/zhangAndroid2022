@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.zhang.zhangandroid.R;
@@ -12,6 +14,7 @@ import com.zhang.zhangandroid.base.BaseActivity;
 import com.zhang.zhangandroid.persistence.sqlite.Contact;
 import com.zhang.zhangandroid.persistence.sqlite.DatabaseHelper;
 
+import java.time.temporal.ValueRange;
 import java.util.List;
 
 /**
@@ -22,10 +25,47 @@ import java.util.List;
  */
 public class PersistenceDataActivity extends BaseActivity {
 
+
+    Button addData_persisten;
+    Button update_persisten;
+    Button delete_persisten;
+    Button quer_persisten;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_persistence_data);
+
+        addData_persisten = findViewById(R.id.addData_persisten);
+        update_persisten = findViewById(R.id.update_persisten);
+        delete_persisten = findViewById(R.id.delete_persisten);
+        quer_persisten = findViewById(R.id.quer_persisten);
+
+        addData_persisten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addData();
+            }
+        });
+        update_persisten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateData();
+            }
+        });
+        delete_persisten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteData();
+            }
+        });
+        quer_persisten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                queryData();
+            }
+        });
 
         SharedPreferences();
 
@@ -72,25 +112,68 @@ public class PersistenceDataActivity extends BaseActivity {
 
 
 
-    public void SqliteHelper(){
+    public void addData(){
+
+            DatabaseHelper helper = new DatabaseHelper(this);
+            Contact contact = new Contact("zhansan","123");
+            helper.addContact(contact);
+
+    }
+
+
+    public void updateData(){
 
         DatabaseHelper helper = new DatabaseHelper(this);
-        Contact contact = new Contact(1,"zhansan","123");
-        helper.addContact(contact);
 
-        contact.setName("lisi");
-        helper.updateContact(contact);
+        List<Contact> allContacts = helper.getAllContacts();
+        if(allContacts != null && allContacts.size()>0){
+            Contact contact = allContacts.get(0);
+            contact.setName(contact.getName()+"a");
+            helper.updateContact(contact);
+        }
+
+
+    }
+
+    public void deleteData(){
+        DatabaseHelper helper = new DatabaseHelper(this);
+        List<Contact> allContacts = helper.getAllContacts();
+        if(allContacts != null && allContacts.size()>0){
+            Contact contact = allContacts.get(0);
+            helper.deleteContact(contact);
+        }
+    }
+
+    public void queryData(){
+        DatabaseHelper helper = new DatabaseHelper(this);
 
         List<Contact> allContacts = helper.getAllContacts();
         for (Contact allContact : allContacts) {
             logZhang(allContact);
         }
 
-        helper.deleteContact(contact);
+    }
 
 
-        int contactsCount = helper.getContactsCount();
-        logZhang("共 "+ contactsCount +" 条数据!");
+    public void SqliteHelper(){
+
+//        DatabaseHelper helper = new DatabaseHelper(this);
+//        Contact contact = new Contact(1,"zhansan","123");
+//        helper.addContact(contact);
+//
+//        contact.setName("lisi");
+//        helper.updateContact(contact);
+//
+//        List<Contact> allContacts = helper.getAllContacts();
+//        for (Contact allContact : allContacts) {
+//            logZhang(allContact);
+//        }
+//
+//        helper.deleteContact(contact);
+//
+//
+//        int contactsCount = helper.getContactsCount();
+//        logZhang("共 "+ contactsCount +" 条数据!");
 
 
     }
