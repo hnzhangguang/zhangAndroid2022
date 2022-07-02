@@ -79,6 +79,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Contact contact = new Contact(Integer.parseInt(cursor.getString(0)),
                 cursor.getString(1), cursor.getString(2));
+
+        cursor.close();
+
         return contact;
     }
    
@@ -101,6 +104,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
+        cursor.close();
+        db.close();
+
         return contactList;
     }
 
@@ -113,8 +119,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(KEY_PH_NO, contact.getPhoneNumber());
 
         //更新行
-        return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
-                new String[] { String.valueOf(contact.getID()) });
+        int update = db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
+                new String[]{String.valueOf(contact.getID())});
+
+
+        return update;
     }
 
     // 删除单个联系人
