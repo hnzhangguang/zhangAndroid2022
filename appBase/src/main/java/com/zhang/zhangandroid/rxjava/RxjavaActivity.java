@@ -22,6 +22,8 @@ import org.reactivestreams.Subscription;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -277,7 +279,7 @@ public class RxjavaActivity extends BaseActivity {
             }
         }).map(new Function<Bitmap, Bitmap>() {
             @Override
-            public Bitmap apply(@NonNull Bitmap bitmap) throws Exception {   //转换
+            public Bitmap apply(@NonNull Bitmap bitmap) throws Exception {   //转换 加水印
 
                 Paint paint = new Paint();
                 paint.setColor(Color.RED);
@@ -285,6 +287,18 @@ public class RxjavaActivity extends BaseActivity {
                 Bitmap newBitmap = drawTextToBitmap(bitmap, "大家好xxxxx", paint, 88, 88);
 
                 return newBitmap;
+            }
+        }).map(new Function<Bitmap, Bitmap>() {
+            @Override
+            public Bitmap apply(@NonNull Bitmap bitmap) throws Exception {  // 只是为了记录日志
+
+
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String format = sdf.format(new Date());
+                logZhang(format+" 图片加的水印!");  // 记录日志
+
+                return bitmap;
             }
         })
                 .subscribeOn(Schedulers.io())  // 给上面的分配异步线程(图片下载)
