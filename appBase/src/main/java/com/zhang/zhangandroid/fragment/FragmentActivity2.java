@@ -61,10 +61,13 @@ public class FragmentActivity2 extends AppCompatActivity {
     }
 
 
+    /**
+     * 简介: commit和commitNow第二个不同：commit可添加到返回栈中，commitNow不允许添加到返回栈中。
+     */
     public void replaceFragment(Fragment fragment){
         FragmentTransaction transaction = supportFragmentManager.beginTransaction();
         transaction.replace(R.id.frameLayout_fragment,fragment);
         transaction.addToBackStack(null); // 回退栈时候,使用
-        transaction.commitNow();
+        transaction.commit();
     }
 }
