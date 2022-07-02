@@ -97,10 +97,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 Contact contact = new Contact();
-                contact.setID(Integer.parseInt(cursor.getString(0)));
-                contact.setName(cursor.getString(1));
-                contact.setPhoneNumber(cursor.getString(2));
+
+                // 下面是获取字段的标准写法
+                contact.setID(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_ID))));
+                contact.setName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
+                contact.setPhoneNumber(cursor.getString(cursor.getColumnIndex(KEY_PH_NO)));
+
+                // 放入集合中
                 contactList.add(contact);
+
             } while (cursor.moveToNext());
         }
 
