@@ -19,7 +19,6 @@ public class RxjavaRequestActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         // 被观察者
         Observable<ResponseResult> observable = LoginEngine.login("zhang", "123");
         // 注册观察者
