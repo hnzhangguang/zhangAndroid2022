@@ -9,9 +9,16 @@
 
     <Button
         android:id="@+id/receiver_btn"
-        android:text="receiver_btn"
+        android:text="静态注册广播"
         android:textAllCaps="false"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></Button>
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/receiver_btn2"
+        android:text="动态注册广播"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
