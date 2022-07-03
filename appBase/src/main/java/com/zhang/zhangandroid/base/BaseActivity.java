@@ -1,10 +1,16 @@
 package com.zhang.zhangandroid.base;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.zhang.zhangandroid.util.MyContextWrapper;
+import com.zhang.zhangandroid.util.SPUtil;
+
+import java.util.Locale;
 
 /**
  * 简介: activity基类
@@ -13,6 +19,26 @@ import androidx.appcompat.app.AppCompatActivity;
  * 作者: zhangg
  */
 public class BaseActivity extends AppCompatActivity {
+
+
+
+    /**
+     * 简介:处理多语问题
+     *  作者: zhangg
+     */
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        Locale newLocale;
+        if (SPUtil.getBoolean(newBase,"isEN")) {
+            //设置英文
+            newLocale = Locale.ENGLISH;
+        } else {
+            //设置中文
+            newLocale = Locale.SIMPLIFIED_CHINESE;
+        }
+        Context context = MyContextWrapper.wrap(newBase, newLocale);
+        super.attachBaseContext(context);
+    }
 
 
     /**
