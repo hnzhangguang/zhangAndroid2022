@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
 import android.os.Parcelable;
 import android.util.Log;
 
@@ -115,6 +116,34 @@ public class PackageUtil {
     }
 
 
+
+    /**
+     * 简介: 获取系统信息
+     *  作者: zhangg
+     */
+    public void getConfiguration(Context context){
+        //①获取系统的Configuration对象
+        Configuration cfg = context.getResources().getConfiguration();
+        //②想查什么查什么
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("densityDpi:" + cfg.densityDpi + "\n");
+        buffer.append("fontScale:" + cfg.fontScale + "\n");
+        buffer.append("hardKeyboardHidden:" + cfg.hardKeyboardHidden + "\n");
+        buffer.append("keyboard:" + cfg.keyboard + "\n");
+        buffer.append("keyboardHidden:" + cfg.keyboardHidden + "\n");
+        buffer.append("locale:" + cfg.locale + "\n");
+        buffer.append("mcc:" + cfg.mcc + "\n");
+        buffer.append("mnc:" + cfg.mnc + "\n");
+        buffer.append("navigation:" + cfg.navigation + "\n");
+        buffer.append("navigationHidden:" + cfg.navigationHidden + "\n");
+        buffer.append("orientation:" + cfg.orientation + "\n");
+        buffer.append("screenHeightDp:" + cfg.screenHeightDp + "\n");
+        buffer.append("screenWidthDp:" + cfg.screenWidthDp + "\n");
+        buffer.append("screenLayout:" + cfg.screenLayout + "\n");
+        buffer.append("smallestScreenWidthDp:" + cfg.densityDpi + "\n");
+        buffer.append("touchscreen:" + cfg.densityDpi + "\n");
+        buffer.append("uiMode:" + cfg.densityDpi + "\n");
+    }
 
 
 
