@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">zhangAndroid</string>
     <string name="open">开</string>
     <string name="close">关</string>
@@ -9,11 +9,12 @@
     <string name="permission_read_storage_rationale">选择图片时需要读取权限</string>
     <string name="permission_write_storage_rationale">拍照时需要存储权限</string>
     <!-- TODO: Remove or change this placeholder text -->
-
     <string name="nihaoma"> 你好吗 ? </string>
-    <string name="add_alpha_base" >增加图片透明度</string>
-    <string name="sub_alpha_base">减小图片透明度</string>
-    <string name="change_pic_base">切换图片</string>
+
+
+    <string name="add_alpha_base" >add_alpha</string>
+    <string name="sub_alpha_base">sub_alpha</string>
+    <string name="change_pic_base">change_pic</string>
 
 
 </resources>

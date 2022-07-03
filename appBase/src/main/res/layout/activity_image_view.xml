@@ -15,21 +15,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="增加图片透明度" />
+            android:text="@string/add_alpha_base" />
 
         <Button
             android:id="@+id/downAlpha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="减小图片透明度" />
+            android:text="@string/sub_alpha_base" />
 
         <Button
             android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="切换图片" />
+            android:text="@string/change_pic_base" />
     </LinearLayout>
 
     <ImageView
