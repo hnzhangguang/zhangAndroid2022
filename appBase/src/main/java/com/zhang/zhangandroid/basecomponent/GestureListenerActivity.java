@@ -11,6 +11,13 @@ import android.widget.Toast;
 
 import com.zhang.zhangandroid.R;
 
+
+/**
+ * 简介: 手势
+ *
+ *
+ *
+ */
 public class GestureListenerActivity extends AppCompatActivity {
 
 
