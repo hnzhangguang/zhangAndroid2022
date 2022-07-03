@@ -7,16 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.zhang.zhangandroid.R;
+import com.zhang.zhangandroid.base.BaseActivity;
+import com.zhang.zhangandroid.util.PackageUtil;
 
 
 /**
  * 简介:
  * 常用属性:
  */
-public class ImageViewActivity extends AppCompatActivity {
+public class ImageViewActivity extends BaseActivity {
 
 
     private Button addAlpha;
@@ -53,6 +54,8 @@ public class ImageViewActivity extends AppCompatActivity {
                     alpha += 20;
                 }
                 imageView1.setImageAlpha(alpha); //为图片设置透明度
+
+                PackageUtil.createShortCut(ImageViewActivity.this);
             }
         });
 

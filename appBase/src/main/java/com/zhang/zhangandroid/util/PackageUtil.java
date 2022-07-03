@@ -5,7 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.os.Parcelable;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.zhang.zhangandroid.R;
 
 import java.util.Collections;
 import java.util.List;
@@ -79,6 +84,36 @@ public class PackageUtil {
         Collections.sort(appsInfo, new ResolveInfo.DisplayNameComparator(packageManager));
         return appsInfo;
     }
+
+
+
+    /**
+     * 简介: 创建桌面快捷方式
+     * 功能: 1,
+     *       2,
+     *  作者: zhangg
+     */
+    public static void createShortCut(AppCompatActivity activity){
+        Intent addShortCut;
+        //判断是否需要添加快捷方式
+//        if(activity.getIntent().getAction().equals(Intent.ACTION_CREATE_SHORTCUT)){
+        if(true){
+            addShortCut = new Intent();
+            //快捷方式的名称
+            addShortCut.putExtra(Intent.EXTRA_SHORTCUT_NAME , "我的快捷方式");
+            //显示的图片
+            Parcelable icon = Intent.ShortcutIconResource.fromContext(activity, R.mipmap.default_select_photo);
+            addShortCut.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, icon);
+            //快捷方式激活的activity，需要执行的intent，自己定义
+            addShortCut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent());
+            //OK，生成
+            activity.setResult(AppCompatActivity.RESULT_OK, addShortCut);
+        }else{
+            //取消
+            activity.setResult(AppCompatActivity.RESULT_CANCELED);
+        }
+    }
+
 
 
 

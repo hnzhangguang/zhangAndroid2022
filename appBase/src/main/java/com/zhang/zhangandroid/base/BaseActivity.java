@@ -3,6 +3,7 @@ package com.zhang.zhangandroid.base;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,5 +61,20 @@ public class BaseActivity extends AppCompatActivity {
             Log.e("mmmm", log.toString());
         }
     }
+
+
+
+
+    // 判空
+    public boolean isNull(String string){
+        if (TextUtils.isEmpty(string)){
+            return true;
+        }
+        return false;
+    }
+
+
+
+
 
 }
