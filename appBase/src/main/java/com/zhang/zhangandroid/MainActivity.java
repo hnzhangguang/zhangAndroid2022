@@ -39,6 +39,7 @@ public class MainActivity extends BaseActivity {
         list.add("RxjavaActivity");
         list.add("OnTouchEventActivity");
         list.add("FragmentTabActivity");
+        list.add("WeixinFirstPageActivity");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -85,6 +86,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("FragmentTabActivity")){
                     junmString = "com.zhang.zhangandroid.basecomponent.FragmentTabActivity";
+                }
+                if (item.equals("WeixinFirstPageActivity")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.WeixinFirstPageActivity";
                 }
 
 

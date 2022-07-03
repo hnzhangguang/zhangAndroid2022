@@ -10,6 +10,16 @@
 
 
     <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textSize="22sp"
+        android:text="@string/nihaoma" />
+
     <TextView
         android:id="@+id/textView_fragment"
         android:layout_width="match_parent"

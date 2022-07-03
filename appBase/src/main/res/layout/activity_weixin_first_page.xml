@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".basecomponent.WeixinFirstPageActivity">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/id_viewpager"/>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+<!--        weixin-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:gravity="center"
+            android:id="@+id/id_tab_weixin"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:background="@drawable/tab_menu_message"
+                android:id="@+id/tab_iv_weixin"
+                android:layout_height="32dp"
+                android:layout_width="32dp" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/text_weixin"
+                android:layout_height="wrap_content"
+                android:layout_width="32dp"
+                android:text="微信" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+<!--联系人-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:gravity="center"
+            android:id="@+id/id_tab_contact"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:background="@drawable/tab_menu_channel"
+                android:id="@+id/tab_iv_contact"
+                android:layout_height="32dp"
+                android:layout_width="32dp" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/text_contact"
+                android:layout_height="wrap_content"
+                android:layout_width="32dp"
+                android:text="联系人" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:gravity="center"
+            android:id="@+id/id_tab_find"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:background="@drawable/tab_menu_better"
+                android:id="@+id/tab_iv_find"
+                android:layout_height="32dp"
+                android:layout_width="32dp" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/text_find"
+                android:layout_height="wrap_content"
+                android:layout_width="32dp"
+                android:text="发现" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:gravity="center"
+            android:id="@+id/id_tab_profile"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:background="@drawable/tab_menu_setting"
+                android:id="@+id/tab_iv_profile"
+                android:layout_height="32dp"
+                android:layout_width="32dp" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/text_profile"
+                android:layout_height="wrap_content"
+                android:layout_width="32dp"
+                android:text="我" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

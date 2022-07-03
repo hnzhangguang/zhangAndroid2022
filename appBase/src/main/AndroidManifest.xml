@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZhangAndroid">
         <activity
+            android:name=".basecomponent.WeixinFirstPageActivity"
+            android:exported="true" />
+        <activity
             android:name=".basecomponent.FragmentTabActivity"
             android:exported="true" />
         <activity
