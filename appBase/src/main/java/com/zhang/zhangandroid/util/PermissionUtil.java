@@ -32,7 +32,7 @@ public class PermissionUtil {
      * @param callback  结果回调
      *  作者: zhangg
      */
-    public void requestPermissions(AppCompatActivity activity, String[] permissionArray, PermissionRequestCallback callback){
+    public static void requestPermissions(AppCompatActivity activity, String[] permissionArray, PermissionRequestCallback callback){
 
         ArrayList<String> permission = new ArrayList<>();
         // 蓝牙
