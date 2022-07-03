@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+
     compileSdk rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
@@ -15,6 +16,40 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+
+    // aar包添加
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+
+    // 添加so库目录
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    //  签名配置
+    signingConfigs {
+        debug {
+            storeFile file('/Users/zhangguang/Documents/codes/zhangAndroid2022/appBase/androidlincens')
+            storePassword 'androidlincens'
+            keyAlias 'androidlincens'
+            keyPassword 'androidlincens'
+        }
+        release {
+            storeFile file('/Users/zhangguang/Documents/codes/zhangAndroid2022/appBase/androidlincens')
+            storePassword 'androidlincens'
+            keyAlias 'androidlincens'
+            keyPassword 'androidlincens'
+        }
+    }
+
 
     buildTypes {
         release {
