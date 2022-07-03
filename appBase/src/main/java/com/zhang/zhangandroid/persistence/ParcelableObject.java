@@ -6,12 +6,12 @@ import android.os.Parcelable;
 /**
  * 简介: 序列号对象android
  * ParcelableObject 为要实现序列化的实体类
+ *  android 开发尽量使用 parcleable 实现序列号, 性能较高
  */
 public class ParcelableObject implements Parcelable {
 
     private int  id;
     private String name;
-
 
     // 反序列化时候调用(从parcel对象中读取处理,赋值给成员变量)
     protected ParcelableObject(Parcel in) {//读取的顺序和写入的顺序必须一致,否则报错

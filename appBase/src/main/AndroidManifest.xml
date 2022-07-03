@@ -24,6 +24,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZhangAndroid"
         android:requestLegacyExternalStorage="true">
+        
+        <provider
+            android:authorities="com.zhang.zhangandroid.provider.provider"
+            android:name="com.zhang.zhangandroid.provider.MyContentProvider"
+            android:process=":provider" />
+
+        <activity android:name="com.zhang.zhangandroid.provider.ContentProviderActivity"/>
+        
         <activity
             android:name=".media.MediaActivity"
             android:exported="true" />

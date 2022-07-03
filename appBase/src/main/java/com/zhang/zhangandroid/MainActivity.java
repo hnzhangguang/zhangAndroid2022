@@ -29,6 +29,7 @@ public class MainActivity extends BaseActivity {
         List<String> list = new ArrayList<>();
         list.add("baseComponent");
         list.add("ComplexComponentActivity");
+        list.add("ContentProviderActivity");
         list.add("AnimationActivity");
         list.add("PersistenceDataActivity");
         list.add("LayoutActivity");
@@ -69,6 +70,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("RxjavaActivity")){
                     junmString = "com.zhang.zhangandroid.rxjava.RxjavaActivity";
+                }
+                if (item.equals("ContentProviderActivity")){
+                    junmString = "com.zhang.zhangandroid.provider.ContentProviderActivity";
                 }
 
 
