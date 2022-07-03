@@ -38,6 +38,7 @@ public class MainActivity extends BaseActivity {
         list.add("DefineViewActivity");
         list.add("RxjavaActivity");
         list.add("OnTouchEventActivity");
+        list.add("FragmentTabActivity");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -81,6 +82,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("OnTouchEventActivity")){
                     junmString = "com.zhang.zhangandroid.basecomponent.OnTouchEventActivity";
+                }
+                if (item.equals("FragmentTabActivity")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.FragmentTabActivity";
                 }
 
 

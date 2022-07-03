@@ -21,6 +21,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZhangAndroid">
         <activity
+            android:name=".basecomponent.FragmentTabActivity"
+            android:exported="true" />
+        <activity
+            android:name=".basecomponent.GestureListenerActivity"
+            android:exported="true" />
+        <activity
             android:name=".basecomponent.OnTouchEventActivity"
             android:exported="true" />
         <activity
