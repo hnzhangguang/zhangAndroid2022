@@ -37,6 +37,7 @@ public class MainActivity extends BaseActivity {
         list.add("BroadcastReceiverActivity");
         list.add("DefineViewActivity");
         list.add("RxjavaActivity");
+        list.add("OnTouchEventActivity");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -77,6 +78,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("DefineViewActivity")){
                     junmString = "com.zhang.zhangandroid.view.DefineViewActivity";
+                }
+                if (item.equals("OnTouchEventActivity")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.OnTouchEventActivity";
                 }
 
 

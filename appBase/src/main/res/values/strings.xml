@@ -11,7 +11,7 @@
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="nihaoma"> 你好吗 ? </string>
-    <string name="add_alpha_base" >增加图片透明度</string>
+    <string name="add_alpha_base">增加图片透明度</string>
     <string name="sub_alpha_base">减小图片透明度</string>
     <string name="change_pic_base">切换图片</string>
 
