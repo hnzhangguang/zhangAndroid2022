@@ -26,7 +26,6 @@ public class GestureListenerActivity extends AppCompatActivity {
     private final static String TAG = "mmmm";
     private final static int MIN_MOVE = 200;   //最小距离
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
