@@ -35,6 +35,7 @@ public class MainActivity extends BaseActivity {
         list.add("LayoutActivity");
         list.add("FragmentActivity");
         list.add("BroadcastReceiverActivity");
+        list.add("DefineViewActivity");
         list.add("RxjavaActivity");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
@@ -73,6 +74,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("ContentProviderActivity")){
                     junmString = "com.zhang.zhangandroid.provider.ContentProviderActivity";
+                }
+                if (item.equals("DefineViewActivity")){
+                    junmString = "com.zhang.zhangandroid.view.DefineViewActivity";
                 }
 
 
