@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhang.zhangandroid">
-
-    <!--    广播和网络权限-->
+    <!-- 广播和网络权限 -->
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!--    读写手机文件权限-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-
-    <!--    音视频权限 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 读写手机文件权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 音视频权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ZhangAndroid"
-        android:requestLegacyExternalStorage="true">
-        
+        android:theme="@style/Theme.ZhangAndroid">
+        <activity
+            android:name=".view.DefineViewActivity"
+            android:exported="true" />
+
         <provider
+            android:name=".provider.MyContentProvider"
             android:authorities="com.zhang.zhangandroid.provider.provider"
-            android:name="com.zhang.zhangandroid.provider.MyContentProvider"
             android:process=":provider" />
 
-        <activity android:name="com.zhang.zhangandroid.provider.ContentProviderActivity"/>
-        
+        <activity android:name=".provider.ContentProviderActivity" />
         <activity
             android:name=".media.MediaActivity"
             android:exported="true" />
