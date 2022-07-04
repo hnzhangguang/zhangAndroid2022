@@ -113,4 +113,10 @@ public class ImageViewActivity extends BaseActivity {
     }
 
 
+    //当Activity得到或者失去焦点的时候，就会回调该方法！
+    // 如果我们想监控Activity是否加载完毕，就可以用到这个方法了
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+    }
 }

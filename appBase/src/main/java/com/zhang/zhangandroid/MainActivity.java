@@ -43,6 +43,7 @@ public class MainActivity extends BaseActivity {
         list.add("PopWindowActivity");
         list.add("AsyncTaskActivity");
         list.add("GestureListenerActivity");
+        list.add("ServiceBindeActivity");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -101,6 +102,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("GestureListenerActivity")){
                     junmString = "com.zhang.zhangandroid.basecomponent.GestureListenerActivity";
+                }
+                if (item.equals("ServiceBindeActivity")){
+                    junmString = "com.zhang.zhangandroid.service.ServiceBindeActivity";
                 }
 
 
