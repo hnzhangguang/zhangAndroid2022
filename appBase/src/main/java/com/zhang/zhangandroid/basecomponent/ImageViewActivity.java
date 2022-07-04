@@ -1,6 +1,8 @@
 package com.zhang.zhangandroid.basecomponent;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -56,6 +58,32 @@ public class ImageViewActivity extends BaseActivity {
                 imageView1.setImageAlpha(alpha); //为图片设置透明度
 
                 PackageUtil.createShortCut(ImageViewActivity.this);
+
+
+// 发送邮件
+//                Intent intent=new Intent(Intent.ACTION_SEND);
+//                String[] tos = {"1@abc.com", "2@abc.com"}; // 收件人
+//                String[] ccs = {"3@abc.com", "4@abc.com"}; // 抄送
+//                String[] bccs = {"5@abc.com", "6@abc.com"}; // 密送
+//                intent.putExtra(Intent.EXTRA_EMAIL, tos);
+//                intent.putExtra(Intent.EXTRA_CC, ccs);
+//                intent.putExtra(Intent.EXTRA_BCC, bccs);
+//                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+//                intent.putExtra(Intent.EXTRA_TEXT, "Hello");
+//                intent.setType("message/rfc822");
+//                startActivity(intent);
+
+
+                // 地图
+//                Uri uri = Uri.parse("geo:39.9,116.3");
+//                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//                startActivity(intent);
+
+
+
+
+
+
             }
         });
 
