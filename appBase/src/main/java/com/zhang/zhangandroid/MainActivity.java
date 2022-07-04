@@ -41,6 +41,8 @@ public class MainActivity extends BaseActivity {
         list.add("FragmentTabActivity");
         list.add("WeixinFirstPageActivity");
         list.add("PopWindowActivity");
+        list.add("AsyncTaskActivity");
+        list.add("GestureListenerActivity");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -93,6 +95,12 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("PopWindowActivity")){
                     junmString = "com.zhang.zhangandroid.basecomponent.PopWindowActivity";
+                }
+                if (item.equals("AsyncTaskActivity")){
+                    junmString = "com.zhang.zhangandroid.http.AsyncTaskActivity";
+                }
+                if (item.equals("GestureListenerActivity")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.GestureListenerActivity";
                 }
 
 
