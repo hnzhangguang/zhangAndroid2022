@@ -60,6 +60,12 @@ public class GestureListenerActivity extends AppCompatActivity {
         }
 
         @Override
+        public void onLongPress(MotionEvent motionEvent) {
+            Log.d(TAG, "onLongPress:长按并且没有松开");
+        }
+
+
+        @Override
         public boolean onSingleTapUp(MotionEvent motionEvent) {
             Log.d(TAG, "onSingleTapUp:手指离开屏幕的一瞬间");
             return false;
@@ -71,10 +77,6 @@ public class GestureListenerActivity extends AppCompatActivity {
             return false;
         }
 
-        @Override
-        public void onLongPress(MotionEvent motionEvent) {
-            Log.d(TAG, "onLongPress:长按并且没有松开");
-        }
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float v, float v1) {
