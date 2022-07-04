@@ -104,6 +104,7 @@ public class MainActivity extends BaseActivity {
                 }
 
 
+
                 // 打开activity
                openActivity(junmString);
 

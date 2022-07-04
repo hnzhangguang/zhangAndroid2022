@@ -29,6 +29,7 @@ public class ComplexComponentActivity extends BaseActivity {
 
         List<String> list = new ArrayList<>();
         list.add("ViewPagerActivity");
+        list.add("RecycleViewActivity");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -41,6 +42,9 @@ public class ComplexComponentActivity extends BaseActivity {
 
                 if (item.equals("ViewPagerActivity")){
                     junmString = "com.zhang.zhangandroid.complexcomponent.ViewPagerActivity";
+                }
+                if (item.equals("RecycleViewActivity")){
+                    junmString = "com.zhang.zhangandroid.complexcomponent.RecycleViewActivity";
                 }
 
 
