@@ -1,6 +1,7 @@
 package com.zhang.zhangandroid.basecomponent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import com.zhang.zhangandroid.R;
 /**
  * 简介: 手势
  *
+ * 检测
  *
  *
  */
@@ -32,14 +34,10 @@ public class GestureListenerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gesture_listener);
 
 
-        //实例化GestureListener与GestureDetector对象
+        //实例化 GestureListener 与 GestureDetector 对象
         mgListener = new MyGestureListener();
-        mDetector = new GestureDetector(this, mgListener);
-
-
+        mDetector = new GestureDetector(this, mgListener);//GestureDetector: 识别各种手势
     }
-
-
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -47,6 +45,7 @@ public class GestureListenerActivity extends AppCompatActivity {
     }
 
     //自定义一个GestureListener,这个是View类下的，别写错哦！！！
+    //GestureListener 手势交互的监听接口
     private class MyGestureListener implements GestureDetector.OnGestureListener {
 
         @Override
@@ -91,6 +90,11 @@ public class GestureListenerActivity extends AppCompatActivity {
         }
     }
 
-
-
+    // SimpleOnGestureListener 是OnGestureListener的子类, 只需要实现自己关系的方法即可
+    GestureDetector.SimpleOnGestureListener simpleOnGestureListener = new GestureDetector.SimpleOnGestureListener(){
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            return super.onFling(e1, e2, velocityX, velocityY);
+        }
+    };
 }
