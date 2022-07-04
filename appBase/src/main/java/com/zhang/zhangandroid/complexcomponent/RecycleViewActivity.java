@@ -94,19 +94,19 @@ public class RecycleViewActivity extends BaseActivity {
         for (int i = 0; i < 2; i++) {
             Fruit apple = new Fruit("Apple", R.mipmap.ic_launcher);
             fruitList.add(apple);
-            Apple banana = new Apple("Banana",R.mipmap.ic_launcher,"apple");
+            Apple banana = new Apple("Banana",R.mipmap.apple,"apple");
             fruitList.add(banana);
-            Apple orange = new Apple("Orange", R.mipmap.ic_launcher,"apple");
+            Apple orange = new Apple("Orange", R.mipmap.apple,"apple");
             fruitList.add(orange);
             Fruit watermelon = new Fruit("Watermelon", R.mipmap.ic_launcher);
             fruitList.add(watermelon);
-            Apple pear = new Apple("Pear", R.mipmap.ic_launcher,"apple");
+            Apple pear = new Apple("Pear", R.mipmap.apple,"apple");
             fruitList.add(pear);
-            Apple grape = new Apple("Grape", R.mipmap.ic_launcher,"apple");
+            Apple grape = new Apple("Grape", R.mipmap.apple,"apple");
             fruitList.add(grape);
             Fruit pineapple = new Fruit("Pineapple", R.mipmap.ic_launcher);
             fruitList.add(pineapple);
-            Apple strawberry = new Apple("Strawberry", R.mipmap.ic_launcher,"apple");
+            Apple strawberry = new Apple("Strawberry", R.mipmap.apple,"apple");
             fruitList.add(strawberry);
             Fruit cherry = new Fruit("Cherry", R.mipmap.ic_launcher);
             fruitList.add(cherry);
