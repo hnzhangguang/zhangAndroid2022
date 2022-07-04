@@ -76,17 +76,18 @@ public class PopWindowActivity extends AppCompatActivity {
 
 
     private void initPopWindow(View v) {
+        // 加载布局
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_popip, null, false);
         Button btn_xixi = (Button) view.findViewById(R.id.btn_xixi);
         Button btn_hehe = (Button) view.findViewById(R.id.btn_hehe);
+
         //1.构造一个PopupWindow，参数依次是加载的View，宽高
         final PopupWindow popWindow = new PopupWindow(view,
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
 
         popWindow.setAnimationStyle(R.anim.anim_pop);  //设置加载动画
 
-        //这些为了点击非PopupWindow区域，PopupWindow会消失的，如果没有下面的
-        //代码的话，你会发现，当你把PopupWindow显示出来了，无论你按多少次后退键
+        //这些为了点击非PopupWindow区域，PopupWindow会消失的，如果没有下面的代码的话，你会发现，当你把PopupWindow显示出来了，无论你按多少次后退键
         //PopupWindow并不会关闭，而且退不出程序，加上下述代码可以解决这个问题
         popWindow.setTouchable(true);
         popWindow.setTouchInterceptor(new View.OnTouchListener() {
@@ -98,7 +99,6 @@ public class PopWindowActivity extends AppCompatActivity {
             }
         });
         popWindow.setBackgroundDrawable(new ColorDrawable(0x00000000));    //要为popWindow设置一个背景才有效
-
 
         //设置popupWindow显示的位置，参数依次是参照View，x轴的偏移量，y轴的偏移量
         popWindow.showAsDropDown(v, 50, 0);
