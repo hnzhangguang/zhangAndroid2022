@@ -8,13 +8,25 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhang.zhangandroid.R;
 import com.zhang.zhangandroid.util.AppUtil;
 
+
+/**
+ * 简介:
+ * 功能: 1,   BinderService
+ *       2,   IntentService
+ *       3,   AIDL Service
+ *
+ *
+ */
 public class ServiceBindeActivity extends AppCompatActivity {
 
 
@@ -23,9 +35,18 @@ public class ServiceBindeActivity extends AppCompatActivity {
     private Button btnstatus;
 
 
+    private EditText edit_num;
+    private Button btn_query;
+    private TextView txt_name;
+    private IPerson iPerson;
+    private PersonConnection conn2 = new PersonConnection();
+
+
+
+
     //保持所启动的Service的IBinder对象,同时定义一个ServiceConnection对象
     BindeService.MyBinder binder;
-    private ServiceConnection conn = new ServiceConnection() {
+    private ServiceConnection conn1 = new ServiceConnection() {
 
         //Activity与Service断开连接时回调该方法
         @Override
@@ -62,7 +83,7 @@ public class ServiceBindeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //绑定service
-                bindService(intent, conn, Service.BIND_AUTO_CREATE);
+                bindService(intent, conn1, Service.BIND_AUTO_CREATE);
             }
         });
 
@@ -70,7 +91,7 @@ public class ServiceBindeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //解除service绑定
-                unbindService(conn);
+                unbindService(conn1);
             }
         });
 
@@ -96,7 +117,53 @@ public class ServiceBindeActivity extends AppCompatActivity {
         });
 
 
+        // AIDL service
+        aidlService();
 
+
+
+    }
+
+
+
+    private final class PersonConnection implements ServiceConnection {
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            iPerson = IPerson.Stub.asInterface(service);
+        }
+        public void onServiceDisconnected(ComponentName name) {
+            iPerson = null;
+        }
+    }
+
+
+
+    // 测试时候, AIDL服务应该和当前测试程序在不同的进程里面才行!!!
+    private void  aidlService(){
+
+        edit_num = (EditText) findViewById(R.id.edit_num);
+        btn_query = (Button) findViewById(R.id.btn_query);
+        txt_name = (TextView) findViewById(R.id.txt_name);
+
+        //绑定远程Service
+        Intent service = new Intent("android.intent.action.AIDLService");
+        service.setPackage(getPackageName());
+
+        bindService(service, conn2, BIND_AUTO_CREATE);
+
+
+        btn_query.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String number = edit_num.getText().toString();
+                int num = Integer.valueOf(number);
+                try {
+                    txt_name.setText(iPerson.queryPerson(num));
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+                edit_num.setText("");
+            }
+        });
 
     }
 

@@ -26,6 +26,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ZhangAndroid">
+
+
+        <service android:name="com.zhang.zhangandroid.service.AIDLService">
+            <intent-filter>
+                <action android:name="android.intent.action.AIDLService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
         <service
             android:name="com.zhang.zhangandroid.service.IntentServiceTest"
             android:enabled="true"
