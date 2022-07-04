@@ -1,6 +1,7 @@
 package com.zhang.zhangandroid.complexcomponent;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -38,12 +39,22 @@ public class RecycleViewActivity extends BaseActivity {
         recyclerView = findViewById(R.id.recycleView);
 
 
-        //1.1 LinearLayoutManager
-        //
-        //1.2 GridLayoutManager
-        //
-        //1.3 StaggeredGridLayoutManager 交错的网格布局
+        // 更改下拉刷新圈圈颜色
+        recycleView_swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
+        // 下拉刷新事件
+        recycleView_swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                SystemClock.sleep(2000);
+                recycleView_swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
+
+
+        //1.1 LinearLayoutManager
+        //1.2 GridLayoutManager
+        //1.3 StaggeredGridLayoutManager 交错的网格布局
 
 //        GridLayoutManager(this, 3)
 //        GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, true)
@@ -60,7 +71,6 @@ public class RecycleViewActivity extends BaseActivity {
         layoutManager .setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
 
-
         // 适配器
         FruitAdapter adapter = new FruitAdapter(fruitList);
         recyclerView.setAdapter(adapter);
@@ -68,7 +78,6 @@ public class RecycleViewActivity extends BaseActivity {
         adapter.setRecycleViewOnItemClick(new FruitAdapter.RecycleViewOnItemClick() {
             @Override
             public void onItemClick(Fruit fruit) {
-
                 showToast(fruit);
             }
         });
