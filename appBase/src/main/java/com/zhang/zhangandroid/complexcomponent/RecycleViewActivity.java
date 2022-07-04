@@ -12,6 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.zhang.zhangandroid.R;
 import com.zhang.zhangandroid.base.BaseActivity;
 import com.zhang.zhangandroid.complexcomponent.adapter.FruitAdapter;
+import com.zhang.zhangandroid.vo.Apple;
 import com.zhang.zhangandroid.vo.Fruit;
 
 import java.util.ArrayList;
@@ -93,19 +94,19 @@ public class RecycleViewActivity extends BaseActivity {
         for (int i = 0; i < 2; i++) {
             Fruit apple = new Fruit("Apple", R.mipmap.ic_launcher);
             fruitList.add(apple);
-            Fruit banana = new Fruit("Banana",R.mipmap.ic_launcher);
+            Apple banana = new Apple("Banana",R.mipmap.ic_launcher,"apple");
             fruitList.add(banana);
-            Fruit orange = new Fruit("Orange", R.mipmap.ic_launcher);
+            Apple orange = new Apple("Orange", R.mipmap.ic_launcher,"apple");
             fruitList.add(orange);
             Fruit watermelon = new Fruit("Watermelon", R.mipmap.ic_launcher);
             fruitList.add(watermelon);
-            Fruit pear = new Fruit("Pear", R.mipmap.ic_launcher);
+            Apple pear = new Apple("Pear", R.mipmap.ic_launcher,"apple");
             fruitList.add(pear);
-            Fruit grape = new Fruit("Grape", R.mipmap.ic_launcher);
+            Apple grape = new Apple("Grape", R.mipmap.ic_launcher,"apple");
             fruitList.add(grape);
-            Fruit pineapple = new Fruit("Pineapple", 						 R.mipmap.ic_launcher);
+            Fruit pineapple = new Fruit("Pineapple", R.mipmap.ic_launcher);
             fruitList.add(pineapple);
-            Fruit strawberry = new Fruit("Strawberry", R.mipmap.ic_launcher);
+            Apple strawberry = new Apple("Strawberry", R.mipmap.ic_launcher,"apple");
             fruitList.add(strawberry);
             Fruit cherry = new Fruit("Cherry", R.mipmap.ic_launcher);
             fruitList.add(cherry);
