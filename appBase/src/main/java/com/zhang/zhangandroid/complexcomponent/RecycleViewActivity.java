@@ -69,6 +69,7 @@ public class RecycleViewActivity extends BaseActivity {
             @Override
             public void onItemClick(Fruit fruit) {
 
+                showToast(fruit);
             }
         });
 
