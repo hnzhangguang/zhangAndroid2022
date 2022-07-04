@@ -40,6 +40,7 @@ public class MainActivity extends BaseActivity {
         list.add("OnTouchEventActivity");
         list.add("FragmentTabActivity");
         list.add("WeixinFirstPageActivity");
+        list.add("PopWindowActivity");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -89,6 +90,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("WeixinFirstPageActivity")){
                     junmString = "com.zhang.zhangandroid.basecomponent.WeixinFirstPageActivity";
+                }
+                if (item.equals("PopWindowActivity")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.PopWindowActivity";
                 }
 
 
