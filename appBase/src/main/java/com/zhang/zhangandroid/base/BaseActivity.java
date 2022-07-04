@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -63,6 +64,14 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
+    public void showToast(Object object){
+        String msg = "";
+        if (null == object){
+            msg = " paramer is null ,请检查!";
+        }
+        msg = object.toString();
+        Toast.makeText(getApplication(),msg,Toast.LENGTH_SHORT).show();
+    }
 
 
     // 判空
