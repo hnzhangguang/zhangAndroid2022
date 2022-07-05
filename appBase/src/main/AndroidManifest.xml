@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zhang.zhangandroid">
-
     <!-- 广播和网络权限 -->
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
@@ -26,21 +25,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ZhangAndroid">
-
+        <activity
+            android:name=".ViewPagerActivity2"
+            android:exported="false" />
 
         <service android:name="com.zhang.zhangandroid.service.AIDLService">
             <intent-filter>
                 <action android:name="android.intent.action.AIDLService" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
-
         <service
             android:name="com.zhang.zhangandroid.service.IntentServiceTest"
             android:enabled="true"
             android:exported="true">
-            <intent-filter >
-                <action android:name="com.test.intentservice"/>
+            <intent-filter>
+                <action android:name="com.test.intentservice" />
             </intent-filter>
         </service>
 

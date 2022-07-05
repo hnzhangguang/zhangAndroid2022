@@ -38,17 +38,17 @@ public class ViewPagerActivity extends BaseActivity {
         mpager = findViewById(R.id.view_pager);
 
         LayoutInflater mInflater = getLayoutInflater();
-        View [] pagers = {mInflater.inflate(R.layout.activity_view_pager_item1 ,null),
-                mInflater.inflate(R.layout.activity_view_pager_item2 , null),
-                mInflater.inflate(R.layout.activity_view_pager_item3 , null)};
+        View[] pagers = {
+                mInflater.inflate(R.layout.activity_view_pager_item1, null),
+                mInflater.inflate(R.layout.activity_view_pager_item2, null),
+                mInflater.inflate(R.layout.activity_view_pager_item3, null)};
 
-        for(int i = 0; i < pagers.length ; i++) {
+        for (int i = 0; i < pagers.length; i++) {
             myview.add(pagers[i]);
         }
         ViewPagerActivity.Adapter ad = new ViewPagerActivity.Adapter(myview);
         mpager.setAdapter(ad);
         mpager.setCurrentItem(0);
-
 
 
         mpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -59,15 +59,15 @@ public class ViewPagerActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                logZhang("aa: "+position);
+                logZhang("aa: " + position);
                 int index = position;
-                if(index == -1){
+                if (index == -1) {
                     //注意这里pagers数组，不是myviews数组
                     index = pagers.length;
-                }else if(position == pagers.length + 1){
+                } else if (position == pagers.length + 1) {
                     index = 0;
                 }
-                if(position != index){
+                if (position != index) {
                     mpager.setCurrentItem(index, false);
                 }
             }
@@ -79,11 +79,19 @@ public class ViewPagerActivity extends BaseActivity {
         });
 
 
-
-
-
     }
 
+
+    /**
+     * 简介: 适配器
+     *
+     * 1, getCount()
+     * 2, instantiateItem()
+     * 3, destroyItem()
+     * 4,isViewFromObject
+     *
+     *
+     */
     class Adapter extends PagerAdapter {
 
         private List<View> views;
@@ -103,10 +111,6 @@ public class ViewPagerActivity extends BaseActivity {
         }
 
         @Override
-        public void finishUpdate(View arg0) {
-        }
-
-        @Override
         public Object instantiateItem(View view, int position) {
             ((ViewPager) view).addView(views.get(position), 0);
             return views.get(position);
@@ -117,18 +121,6 @@ public class ViewPagerActivity extends BaseActivity {
             return arg0 == (arg1);
         }
 
-        @Override
-        public void restoreState(Parcelable arg0, ClassLoader arg1) {
-        }
-
-        @Override
-        public Parcelable saveState() {
-            return null;
-        }
-
-        @Override
-        public void startUpdate(View arg0) {
-        }
     }
 
 

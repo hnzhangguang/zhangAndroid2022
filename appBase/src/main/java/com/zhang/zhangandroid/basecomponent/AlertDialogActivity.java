@@ -15,6 +15,18 @@ import com.zhang.zhangandroid.R;
 
 import java.util.ArrayList;
 
+
+/**
+ * 简介:
+ *
+ * Step 1：创建AlertDialog.Builder对象；
+ * Step 2：调用setIcon()设置图标，setTitle()或setCustomTitle()设置标题；
+ * Step 3：设置对话框的内容：setMessage()还有其他方法来指定显示的内容；
+ * Step 4：调用setPositive/Negative/NeutralButton()设置：确定，取消，中立按钮；
+ * Step 5：调用create()方法创建这个对象，再调用show()方法将对话框显示出来；
+ *
+ *
+ */
 public class AlertDialogActivity extends AppCompatActivity {
 
     @Override
