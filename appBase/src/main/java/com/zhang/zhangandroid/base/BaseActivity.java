@@ -5,10 +5,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.zhang.zhangandroid.App;
+import com.zhang.zhangandroid.R;
 import com.zhang.zhangandroid.util.MyContextWrapper;
 import com.zhang.zhangandroid.util.SPUtil;
 
@@ -23,15 +31,14 @@ import java.util.Locale;
 public class BaseActivity extends AppCompatActivity {
 
 
-
     /**
      * 简介:处理多语问题
-     *  作者: zhangg
+     * 作者: zhangg
      */
     @Override
     protected void attachBaseContext(Context newBase) {
         Locale newLocale;
-        if (SPUtil.getBoolean(newBase,"isEN")) {
+        if (SPUtil.getBoolean(newBase, "isEN")) {
             //设置英文
             newLocale = Locale.ENGLISH;
         } else {
@@ -64,26 +71,39 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
-    public void showToast(Object object){
+    public void showToast(Object object) {
         String msg = "";
-        if (null == object){
+        if (null == object) {
             msg = " paramer is null ,请检查!";
         }
         msg = object.toString();
-        Toast.makeText(getApplication(),msg,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplication(), msg, Toast.LENGTH_SHORT).show();
     }
 
 
     // 判空
-    public boolean isNull(String string){
-        if (TextUtils.isEmpty(string)){
+    public boolean isNull(String string) {
+        if (TextUtils.isEmpty(string)) {
             return true;
         }
         return false;
     }
 
 
-
+    //自定义toast
+    public void showMidToast(String str) {
+        LayoutInflater inflater = getLayoutInflater();
+        View view = inflater.inflate(R.layout.view_toast_custom,
+                (ViewGroup) findViewById(R.id.layout_toast));
+        ImageView img_logo = (ImageView) view.findViewById(R.id.img_logo_toast);
+        TextView tv_msg = (TextView) view.findViewById(R.id.tv_msg_toast);
+        tv_msg.setText(str);
+        Toast toast = new Toast(App.getApplication());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(view);
+        toast.show();
+    }
 
 
 }
