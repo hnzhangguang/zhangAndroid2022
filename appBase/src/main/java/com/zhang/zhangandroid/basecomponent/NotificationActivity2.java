@@ -84,7 +84,6 @@ public class NotificationActivity2 extends AppCompatActivity {
                     .setOngoing(true);
             notification = notificationBuilder.build();
         }
-
         manager.notify(1, notification);
 
     }
