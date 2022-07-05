@@ -4,7 +4,6 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 
-import com.zhang.zhangandroid.util.ActivityCollector;
 import com.zhang.zhangandroid.util.AppUtil;
 
 public class App extends Application {
@@ -28,7 +27,6 @@ public class App extends Application {
      */
     public void AppExit(Context context) {
         try {
-            ActivityCollector.finishAll();
             ActivityManager activityMgr = (ActivityManager) context
                     .getSystemService(Context.ACTIVITY_SERVICE);
             activityMgr.killBackgroundProcesses(context.getPackageName());

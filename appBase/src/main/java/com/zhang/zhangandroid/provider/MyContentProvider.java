@@ -15,8 +15,21 @@ import androidx.annotation.Nullable;
 import java.util.logging.Logger;
 
 /**
- * @author zhongyao
- * @date 2018/6/11
+ * 自定义 ContentProvider
+ * 实现步骤:
+ *  1, 先要创建一个数据库创建类 DbOpenHelper ( book,user )
+ *  2, 自定义ContentProvider类，实现onCreate()，getType()
+ *  3, 根据需求重写对应的增删改查方法
+ *  4, AndroidManifest.xml中为ContentProvider进行注册
+ *
+ *  5, 另外一个项目使用 :
+ *      ContentResolver resolver = this.getContentResolver();
+ *      ContentValues values = new ContentValues();
+ *      values.put("name", "测试");
+ *      Uri uri = Uri.parse("content://com.jay.example.providers.myprovider/test");
+ *      resolver.insert(uri, values);
+ *
+ *
  *
  * onCreate方法运行在主线程(main)中
  * 其他方法运行在Binder线程池中
@@ -62,7 +75,8 @@ public class MyContentProvider extends ContentProvider {
         Log.e(TAG , "onCreate--" + "currentThreadName:" + currentThreadName);
   
         mContext = getContext();
-  
+
+        // onCreate() 做的最重要的一件事儿!!!
         mDbHelper = new DbOpenHelper(getContext(), "", null, 1);
         mDB = mDbHelper.getWritableDatabase();
         mDB.execSQL("delete from " + DbOpenHelper.BOOK_TABLE_NAME);
@@ -71,6 +85,8 @@ public class MyContentProvider extends ContentProvider {
         mDB.execSQL("insert into book values('2','Java',348);");
         mDB.execSQL("insert into user values('1','hongri',1);");
         mDB.execSQL("insert into user values('2','huyin',1);");
+
+
         return true;
     }
   

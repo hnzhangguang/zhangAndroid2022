@@ -46,9 +46,11 @@ public class ContentProviderActivity extends BaseActivity implements View.OnClic
         btnQueryByUser.setOnClickListener(this);
         btnModify.setOnClickListener(this);
         btnDelete.setOnClickListener(this);
- 
+
+        // 注册ContentObserver监听ContentProvider的数据变化
         getContentResolver().registerContentObserver(bookUri, true, mContentObserver);
         getContentResolver().registerContentObserver(userUri, true, mContentObserver);
+
     }
  
     /**
