@@ -33,6 +33,7 @@ public class NotificationActivity2 extends AppCompatActivity {
         });
     }
 
+
     public void showNotification() {
 
         String id = "channelId";
