@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.zhang.zhangandroid.App;
 import com.zhang.zhangandroid.R;
+import com.zhang.zhangandroid.util.AppUtil;
 import com.zhang.zhangandroid.util.MyContextWrapper;
 import com.zhang.zhangandroid.util.SPUtil;
 
@@ -37,6 +38,10 @@ public class BaseActivity extends AppCompatActivity {
      */
     @Override
     protected void attachBaseContext(Context newBase) {
+
+        // 记录当前activity
+        Log.d("mmmm",getClass().getSimpleName());
+
         Locale newLocale;
         if (SPUtil.getBoolean(newBase, "isEN")) {
             //设置英文
