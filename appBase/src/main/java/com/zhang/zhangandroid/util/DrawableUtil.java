@@ -3,6 +3,7 @@ package com.zhang.zhangandroid.util;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,15 +12,16 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.net.Uri;
+import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class DrawableUtil {
-
 
 
     //图片压缩
@@ -34,7 +36,6 @@ public class DrawableUtil {
         }
         return inSampleSize;
     }
-
 
 
     /**
@@ -120,7 +121,6 @@ public class DrawableUtil {
     }
 
 
-
     /**
      * 简介:
      * 功能: 选择 相机 or 相册
@@ -199,15 +199,15 @@ public class DrawableUtil {
     }
 
 
-
-
-
-
-
-
-
-
-
+    // 根据Uri获取bitmap
+    private Bitmap getBitmapFromUri(Context context, Uri uri) throws IOException {
+        ParcelFileDescriptor parcelFileDescriptor =
+                context.getContentResolver().openFileDescriptor(uri, "r");
+        FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
+        Bitmap image = BitmapFactory.decodeFileDescriptor(fileDescriptor);
+        parcelFileDescriptor.close();
+        return image;
+    }
 
 
 }
