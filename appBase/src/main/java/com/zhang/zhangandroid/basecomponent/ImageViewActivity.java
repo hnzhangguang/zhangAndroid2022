@@ -107,6 +107,8 @@ public class ImageViewActivity extends BaseActivity {
             public void onClick(View v) {
                 //控制显示下一张图片
                 imageView1.setImageResource(images[++currentImage % images.length]);
+
+
             }
         });
 
