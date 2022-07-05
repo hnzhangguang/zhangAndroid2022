@@ -14,6 +14,15 @@ import java.util.ArrayList;
 
 /**
  * 简介: 构造的万能adapter
+ *
+ * 使用方法:
+ * myAllPowerAdapter = new AllPowerAdapter<Hero>(mData,R.layout.item_spin_hero) {
+ *             @Override
+ *             public void bindView(ViewHolder holder, Hero obj) {
+ *                 holder.setImageResource(R.id.img_icon,obj.gethIcon());
+ *                 holder.setText(R.id.txt_name, obj.gethName());
+ *             }
+ *         };
  */
 public abstract class AllPowerAdapter<T> extends BaseAdapter {
 

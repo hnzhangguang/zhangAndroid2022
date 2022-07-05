@@ -44,6 +44,7 @@ public class MainActivity extends BaseActivity {
         list.add("AsyncTaskActivity");
         list.add("GestureListenerActivity");
         list.add("ServiceBindeActivity");
+        list.add("NotificationActivity2");
 
         MyListViewSimpleAdapter adapter = new MyListViewSimpleAdapter(list,this);
 
@@ -105,6 +106,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("ServiceBindeActivity")){
                     junmString = "com.zhang.zhangandroid.service.ServiceBindeActivity";
+                }
+                if (item.equals("NotificationActivity2")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.NotificationActivity2";
                 }
 
 
