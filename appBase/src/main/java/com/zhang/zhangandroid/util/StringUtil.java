@@ -1,5 +1,7 @@
 package com.zhang.zhangandroid.util;
 
+import android.text.TextUtils;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.zip.GZIPOutputStream;
@@ -28,5 +30,15 @@ public class StringUtil {
         }
         return "";
     }
+
+
+    // 判空处理
+    public static boolean isNull(String dataString){
+        if (TextUtils.isEmpty(dataString)){
+            return true;
+        }
+        return false;
+    }
+
 
 }
