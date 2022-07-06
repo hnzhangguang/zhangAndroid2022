@@ -17,6 +17,8 @@ public class StringUtil {
         ByteArrayOutputStream bout = new ByteArrayOutputStream();
         try {
             GZIPOutputStream gout = new GZIPOutputStream(bout);
+            gout.write(data.getBytes());
+            gout.close();
             // 得到压缩后的数据
             byte gdata[] = bout.toByteArray();
             return new String(gdata);
