@@ -31,6 +31,7 @@ public class MainActivity extends BaseActivity {
         list.add("ComplexComponentActivity");
         list.add("MainFragmentActivity");
         list.add("ContentProviderActivity");
+        list.add("JsBridgeActivity");
         list.add("AnimationActivity");
         list.add("PersistenceDataActivity");
         list.add("LayoutActivity");
@@ -68,6 +69,9 @@ public class MainActivity extends BaseActivity {
                 }
                 if (item.equals("AnimationActivity")){
                     junmString = "com.zhang.zhangandroid.animation.AnimationActivity";
+                }
+                if (item.equals("JsBridgeActivity")){
+                    junmString = "com.zhang.zhangandroid.js.JsBridgeActivity";
                 }
                 if (item.equals("PersistenceDataActivity")){
                     junmString = "com.zhang.zhangandroid.persistence.PersistenceDataActivity";
