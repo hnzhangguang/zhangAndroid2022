@@ -10,4 +10,8 @@
         android:endColor="@android:color/holo_blue_dark"
         android:startColor="@android:color/holo_red_dark" />
 
+<!--    给环描边-->
+<!--    <stroke android:width="5dp"-->
+<!--        android:color="@android:color/background_light" />-->
+
 </shape>
