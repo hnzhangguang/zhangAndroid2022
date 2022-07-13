@@ -25,6 +25,20 @@
             android:layout_height="wrap_content"
             android:text="aaaa" />
 
+
+        <SeekBar
+            android:id="@+id/seekbar_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminateDrawable="@android:drawable/progress_indeterminate_horizontal"
+            android:indeterminateOnly="false"
+            android:maxHeight="10dp"
+            android:minHeight="5dp"
+            android:progressDrawable="@drawable/layerlist_one"
+            android:thumb="@mipmap/ic_launcher" />
+
+
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </ScrollView>

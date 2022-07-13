@@ -35,6 +35,9 @@
         <activity
             android:name="com.zhang.zhangandroid.js.JsBridgeActivity"
             android:exported="false" />
+        <activity
+            android:name="com.zhang.zhangandroid.basecomponent.SeekBarActivity"
+            android:exported="false" />
 
         <activity android:name="com.zhang.zhangandroid.fragment.fragmentdemo4.MainFragmentActivity"></activity>
         <activity

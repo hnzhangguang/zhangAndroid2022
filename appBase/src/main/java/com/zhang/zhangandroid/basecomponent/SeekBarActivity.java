@@ -12,12 +12,15 @@ import androidx.annotation.Nullable;
 import com.zhang.zhangandroid.R;
 import com.zhang.zhangandroid.base.BaseActivity;
 
+/**
+ * 简介: seekbar 的使用
+ * 作者: zhangg
+ */
 public class SeekBarActivity extends BaseActivity {
 
-
-    SeekBar sb_normal;
-    TextView txt_cur;
-    ScrollView scrollView;
+    private SeekBar sb_normal, seekbar_second;
+    private TextView txt_cur;
+    private ScrollView scrollView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,18 +31,19 @@ public class SeekBarActivity extends BaseActivity {
         bindViews(this);
 
 
-
     }
 
 
     private void bindViews(Context mContext) {
         sb_normal = (SeekBar) findViewById(R.id.sb_normal);
+        seekbar_second = (SeekBar) findViewById(R.id.seekbar_second);
         txt_cur = (TextView) findViewById(R.id.txt_cur);
         scrollView = (ScrollView) findViewById(R.id.scrollView);
         sb_normal.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 txt_cur.setText("当前进度值:" + progress + "  / 100 ");
+                seekbar_second.setProgress(progress);
             }
 
             @Override
@@ -52,8 +56,9 @@ public class SeekBarActivity extends BaseActivity {
                 Toast.makeText(mContext, "放开SeekBar", Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
+
+    }
 
 
 }

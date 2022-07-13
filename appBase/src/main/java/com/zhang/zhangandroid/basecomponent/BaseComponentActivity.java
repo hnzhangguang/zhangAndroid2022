@@ -31,6 +31,7 @@ public class BaseComponentActivity extends AppCompatActivity {
 
         List<String> list = new ArrayList<>();
         list.add("ImageViewActivity");
+        list.add("SeekBarActivity");
 
         MyAdapter adapter = new MyAdapter(list,this);
 
@@ -43,6 +44,9 @@ public class BaseComponentActivity extends AppCompatActivity {
 
                 if (item.equals("ImageViewActivity")){
                     junmString = "com.zhang.zhangandroid.basecomponent.ImageViewActivity";
+                }
+                if (item.equals("SeekBarActivity")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.SeekBarActivity";
                 }
 
 
