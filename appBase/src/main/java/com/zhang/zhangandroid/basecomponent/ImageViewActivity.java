@@ -2,6 +2,8 @@ package com.zhang.zhangandroid.basecomponent;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,7 +27,7 @@ public class ImageViewActivity extends BaseActivity {
     private Button addAlpha;
     private Button downAlpha;
     private Button next;
-    private ImageView imageView1;
+    private ImageView imageView1,imageView_transition;
     int[] images = new int[]{ //用数组存储春，夏，秋，冬四张图片
             R.drawable.spring,
             R.drawable.summer,
@@ -43,6 +45,7 @@ public class ImageViewActivity extends BaseActivity {
         downAlpha = (Button) findViewById(R.id.downAlpha);
         next = (Button) findViewById(R.id.next);
         imageView1 = (ImageView) findViewById(R.id.imageView1);
+        imageView_transition = (ImageView) findViewById(R.id.imageView_transition);
 
 
         //对增加图片透明度按钮设置监听事件
@@ -111,6 +114,14 @@ public class ImageViewActivity extends BaseActivity {
 
             }
         });
+
+
+
+//        TransitionDrawable 的使用
+        TransitionDrawable td = (TransitionDrawable) imageView_transition.getDrawable();
+        td.startTransition(3000);
+
+
 
     }
 

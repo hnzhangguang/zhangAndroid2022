@@ -54,6 +54,20 @@
 
 
 
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/imageView_transition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5px"
+        android:adjustViewBounds="true"
+        android:maxHeight="200px"
+        android:maxWidth="200px"
+        android:src="@drawable/transition" />
+
+
+
+
 
 
 </LinearLayout>
