@@ -5,6 +5,8 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import com.zhang.zhangandroid.util.AppUtil;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -55,7 +57,7 @@ public class ReadBitmap {
             fOut.close();
             return true;
         } catch (Exception e) {
-            // TODO: handle exception
+            AppUtil.logZhang(e);
             e.printStackTrace();
         }
         return false;
