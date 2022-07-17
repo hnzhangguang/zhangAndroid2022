@@ -237,4 +237,11 @@ public class DrawableUtil {
     }
 
 
+    // 抠图使用方法
+    public void corpBitmap(Context context,Bitmap bitmap){
+        Bitmap bitmap1 = bitmap;
+        Bitmap bitmap2 = Bitmap.createBitmap(bitmap1,100,100,200,200);
+    }
+
+
 }
