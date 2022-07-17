@@ -6,6 +6,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,8 +21,34 @@ import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class DrawableUtil {
+
+
+    //通过资源ID
+    private Bitmap getBitmapFromResource(Resources res, int resId) {
+        return BitmapFactory.decodeResource(res, resId);
+    }
+
+    //文件
+    private Bitmap getBitmapFromFile(String pathName) {
+        return BitmapFactory.decodeFile(pathName);
+    }
+
+    //字节数组
+    public Bitmap Bytes2Bimap(byte[] b) {
+        if (b.length != 0) {
+            return BitmapFactory.decodeByteArray(b, 0, b.length);
+        } else {
+            return null;
+        }
+    }
+
+    //输入流
+    private Bitmap getBitmapFromStream(InputStream inputStream) {
+        return BitmapFactory.decodeStream(inputStream);
+    }
 
 
     //图片压缩
