@@ -22,6 +22,11 @@ import java.util.WeakHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
+/**
+ * 简介: ImageLoader
+ *  作者: zhangg
+ */
 public class ImageLoader {
     MemoryCache memoryCache = new MemoryCache();
     FileCache fileCache;
@@ -88,12 +93,12 @@ public class ImageLoader {
     private Bitmap decodeFile(File f) {
         try {
             // decode image size
-            BitmapFactory.Options o = new BitmapFactory.Options();
-            o.inJustDecodeBounds = true;
-            BitmapFactory.decodeStream(new FileInputStream(f), null, o);
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            BitmapFactory.decodeStream(new FileInputStream(f), null, options);
             // Find the correct scale value. It should be the power of 2.
             final int REQUIRED_SIZE = 70;
-            int width_tmp = o.outWidth, height_tmp = o.outHeight;
+            int width_tmp = options.outWidth, height_tmp = options.outHeight;
             int scale = 1;
             while (true) {
                 if (width_tmp / 2 < REQUIRED_SIZE
@@ -105,7 +110,7 @@ public class ImageLoader {
             }
             // decode with inSampleSize
             BitmapFactory.Options o2 = new BitmapFactory.Options();
-            o2.inSampleSize = scale;
+            o2.inSampleSize = scale;//inSampleSize——图片缩放的倍数。如果设为4，则宽和高都为原来的1/4，则图是原来的1/16
             return BitmapFactory.decodeStream(new FileInputStream(f), null, o2);
         } catch (FileNotFoundException e) {
         }
