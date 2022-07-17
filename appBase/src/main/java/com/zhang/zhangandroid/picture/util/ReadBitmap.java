@@ -41,6 +41,10 @@ public class ReadBitmap {
         }
     }
 
+    /**
+     * 简介: 把bitmap存入指定文件
+     *  作者: zhangg
+     */
     public static boolean saveMyBitmap(Bitmap bmp, String path) {
         File f = new File(path);
         try {
