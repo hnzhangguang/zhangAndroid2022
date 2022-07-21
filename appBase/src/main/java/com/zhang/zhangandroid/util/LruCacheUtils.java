@@ -22,7 +22,7 @@ public class LruCacheUtils {
             activityManager = (ActivityManager) App.getApplication().getSystemService(Context.ACTIVITY_SERVICE);
             int memoryClass = activityManager.getMemoryClass();
 
-            Log.e("HEHE", "最大内存：" + activityManager.getMemoryClass());
+            Log.e("mmmm", "最大内存：" + activityManager.getMemoryClass());
             mMemoryCache = new LruCache<String, Bitmap>(
                     30) {
                 @Override
@@ -34,7 +34,7 @@ public class LruCacheUtils {
                 @Override
                 protected void entryRemoved(boolean evicted, String key,
                                             Bitmap oldValue, Bitmap newValue) {
-                    Log.v("tag", "hard cache is full , push to soft cache");
+                    Log.v("mmmm", "hard cache is full , push to soft cache");
 
                 }
             };
@@ -48,7 +48,7 @@ public class LruCacheUtils {
                 Log.d("CacheUtils",
                         "mMemoryCache.size() " + mMemoryCache.size());
                 mMemoryCache.evictAll();
-                Log.d("CacheUtils", "mMemoryCache.size()" + mMemoryCache.size());
+                Log.d("mmmm", "mMemoryCache.size()" + mMemoryCache.size());
             }
             mMemoryCache = null;
         }

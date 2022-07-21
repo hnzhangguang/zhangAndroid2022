@@ -31,15 +31,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ZhangAndroid">
-
+        <activity
+            android:name="com.zhang.zhangandroid.basecomponent.ImageColorMatrixActivity2"
+            android:exported="false" />
+        <activity
+            android:name="com.zhang.zhangandroid.basecomponent.ImageColorMatrixActivity"
+            android:exported="false" />
         <activity
             android:name="com.zhang.zhangandroid.js.JsBridgeActivity"
             android:exported="false" />
         <activity
             android:name="com.zhang.zhangandroid.basecomponent.SeekBarActivity"
             android:exported="false" />
-
-        <activity android:name="com.zhang.zhangandroid.fragment.fragmentdemo4.MainFragmentActivity"></activity>
+        <activity android:name="com.zhang.zhangandroid.fragment.fragmentdemo4.MainFragmentActivity" />
         <activity
             android:name="com.zhang.zhangandroid.complexcomponent.ViewPagerActivity2"
             android:exported="false" />

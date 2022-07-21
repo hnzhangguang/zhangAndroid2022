@@ -1,73 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/addAlpha"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/addAlpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/add_alpha_base" />
+
+            <Button
+                android:id="@+id/downAlpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/sub_alpha_base" />
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/change_pic_base" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="280dp"
+            android:layout_marginTop="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_launcher_background" />
+
+
+        <!-- 限制了最大宽度与高度,并且设置了调整边界来保持所显示图像的长宽比-->
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/add_alpha_base" />
+            android:layout_margin="5px"
+            android:adjustViewBounds="true"
+            android:maxWidth="200px"
+            android:maxHeight="200px"
+            android:src="@drawable/autumor" />
 
-        <Button
-            android:id="@+id/downAlpha"
+
+        <ImageView
+            android:id="@+id/imageView_transition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/sub_alpha_base" />
+            android:layout_margin="5px"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="200px"
+            android:maxHeight="200px"
+            android:src="@drawable/transition" />
 
-        <Button
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/change_pic_base" />
+
+        <com.zhang.zhangandroid.view.RoundImageView
+            android:id="@+id/img_round"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_margin="5px" />
+
+
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="280dp"
-        android:layout_marginTop="100dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_launcher_background" />
-
-
-    <!-- 限制了最大宽度与高度,并且设置了调整边界来保持所显示图像的长宽比-->
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5px"
-        android:adjustViewBounds="true"
-        android:maxHeight="200px"
-        android:maxWidth="200px"
-        android:src="@drawable/autumor" />
-
-
-
-    <ImageView
-        android:layout_marginTop="20dp"
-        android:id="@+id/imageView_transition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5px"
-        android:adjustViewBounds="true"
-        android:maxHeight="200px"
-        android:maxWidth="200px"
-        android:src="@drawable/transition" />
-
-
-
-
-
-
-</LinearLayout>
+</ScrollView>

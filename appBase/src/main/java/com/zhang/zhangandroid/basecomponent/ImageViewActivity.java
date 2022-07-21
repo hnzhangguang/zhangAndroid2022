@@ -2,6 +2,8 @@ package com.zhang.zhangandroid.basecomponent;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
@@ -15,6 +17,7 @@ import android.widget.ImageView;
 import com.zhang.zhangandroid.R;
 import com.zhang.zhangandroid.base.BaseActivity;
 import com.zhang.zhangandroid.util.PackageUtil;
+import com.zhang.zhangandroid.view.RoundImageView;
 
 
 /**
@@ -120,6 +123,13 @@ public class ImageViewActivity extends BaseActivity {
 //        TransitionDrawable 的使用
         TransitionDrawable td = (TransitionDrawable) imageView_transition.getDrawable();
         td.startTransition(3000);
+
+
+
+        RoundImageView img_round = (RoundImageView) findViewById(R.id.img_round);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.meizi);
+        img_round.setBitmap(bitmap);
+
 
 
 

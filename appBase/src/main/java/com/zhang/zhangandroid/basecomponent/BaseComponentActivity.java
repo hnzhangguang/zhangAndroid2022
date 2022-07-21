@@ -32,6 +32,8 @@ public class BaseComponentActivity extends AppCompatActivity {
         List<String> list = new ArrayList<>();
         list.add("ImageViewActivity");
         list.add("SeekBarActivity");
+        list.add("ImageColorMatrixActivity");
+        list.add("ImageColorMatrixActivity2");
 
         MyAdapter adapter = new MyAdapter(list,this);
 
@@ -47,6 +49,12 @@ public class BaseComponentActivity extends AppCompatActivity {
                 }
                 if (item.equals("SeekBarActivity")){
                     junmString = "com.zhang.zhangandroid.basecomponent.SeekBarActivity";
+                }
+                if (item.equals("ImageColorMatrixActivity")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.ImageColorMatrixActivity";
+                }
+                if (item.equals("ImageColorMatrixActivity2")){
+                    junmString = "com.zhang.zhangandroid.basecomponent.ImageColorMatrixActivity2";
                 }
 
 
