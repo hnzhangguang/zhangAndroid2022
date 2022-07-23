@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import com.zhang.zhangandroid.R;
 import com.zhang.zhangandroid.base.BaseActivity;
 import com.zhang.zhangandroid.util.PackageUtil;
+import com.zhang.zhangandroid.view.MatrixView;
 import com.zhang.zhangandroid.view.RoundImageView;
 
 
@@ -24,7 +25,7 @@ import com.zhang.zhangandroid.view.RoundImageView;
  * 简介:
  * 常用属性:
  */
-public class ImageViewActivity extends BaseActivity {
+public class ImageViewActivity extends BaseActivity implements View.OnClickListener {
 
 
     private Button addAlpha;
@@ -39,6 +40,15 @@ public class ImageViewActivity extends BaseActivity {
     };
     int currentImage = 0; //定义当前默认显示的图片
     int alpha = 255;//定义图片起始透明度
+
+    private Button btn_reset;
+    private Button btn_left;
+    private Button btn_right;
+    private Button btn_zoomin;
+    private Button btn_zoomout;
+    private MatrixView matrixView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,6 +142,22 @@ public class ImageViewActivity extends BaseActivity {
 
 
 
+        btn_reset = (Button) findViewById(R.id.btn_reset);
+        btn_left = (Button) findViewById(R.id.btn_left);
+        btn_right = (Button) findViewById(R.id.btn_right);
+        btn_zoomin = (Button) findViewById(R.id.btn_zoomin);
+        btn_zoomout = (Button) findViewById(R.id.btn_zoomout);
+        matrixView = (MatrixView) findViewById(R.id.myView);
+
+
+        btn_reset.setOnClickListener(this);
+        btn_left.setOnClickListener(this);
+        btn_right.setOnClickListener(this);
+        btn_zoomin.setOnClickListener(this);
+        btn_zoomout.setOnClickListener(this);
+
+
+
 
     }
 
@@ -141,5 +167,26 @@ public class ImageViewActivity extends BaseActivity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_reset:
+                matrixView.setMethod(0);
+                break;
+            case R.id.btn_left:
+                matrixView.setMethod(1);
+                break;
+            case R.id.btn_right:
+                matrixView.setMethod(2);
+                break;
+            case R.id.btn_zoomin:
+                matrixView.setMethod(3);
+                break;
+            case R.id.btn_zoomout:
+                matrixView.setMethod(4);
+                break;
+        }
     }
 }
